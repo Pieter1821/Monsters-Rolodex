@@ -1,39 +1,38 @@
+import { Component } from "react";
 
-import { Component } from 'react'
-
-import './App.css'
-
+import "./App.css";
 
 class App extends Component {
-
-  constructor(){
-    super()
+  constructor() {
+    super();
 
     this.state = {
-      name: 'Pieter'
-    }
+      monsters: [
+        {
+          name: "Linda",
+        },
+        {
+          name: "Frank",
+        },
+        {
+          name: "Jacky",
+        },
+        {
+          name: "Andrei",
+        },
+      ],
+    };
   }
 
-  
-  render(){
-
+  render() {
     return (
       <div>
-         <h1>Hi my name is {this.state.name}</h1>
-         <button>
-              Change my name
-         </button>
-  </div>
-  )
-} 
+        {this.state.monsters.map((monster) => {
+          return <h1>{monster.name}</h1>;
+        })}
+      </div>
+    );
+  }
 }
 
-  
-  
-  
-  
-  
-  
-  
-
-export default App
+export default App;
