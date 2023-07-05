@@ -10,7 +10,16 @@ body {
   -moz-osx-font-smoothing:grayscale;
 
   background: linear-gradient(to left ,
-   rgba(7,27,82,1)0%,
-   rgba(0,128,128,1)100%);
+   rgba(90,27,82,1)0%,
+   rgba(128,128,1)100%);
 
+}
+
+
+.app-title {
+  margin-top: 75px;
+  margin-bottom: 50px;
+  font-size: 76px;
+  color: aqua;
+  font-family: 'indie Flower';
 }
