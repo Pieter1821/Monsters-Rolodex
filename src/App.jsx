@@ -1,10 +1,33 @@
-import { Component } from "react";
-import "./App.css";
-import CardList from "./components/card-list/card-list.component";
+import { useState } from 'react';
+import './App.css';
+import CardList from './components/card-list/card-list.component';
+import SearchBox from './components/search-box/search-box.component';
 
-import SearchBox from "./components/search-box/search-box.component";
+const App = () => {
+  const [searchField, setSearchField] = useState(); //[value, setValue]
+  console.log(searchField);
+  const onSearchChange = (event) => {
+    const searchFieldString = event.target.value.toLowerCase();
+    setSearchField(searchFieldString);
+  };
 
-class App extends Component {
+  return (
+    <div className="App">
+      <h1 className="app-title">Monsters Rolodex </h1>
+      <SearchBox
+        className="monsters-search-box"
+        SearchBox
+        onChangeHandler={onSearchChange}
+        placeholder="search monsters "
+      />
+      {/*} 
+
+<CardList monsters={filteredMonsters} />*/}
+    </div>
+  );
+};
+
+/* class App extends Component {
   constructor() {
     super();
 
@@ -24,12 +47,10 @@ class App extends Component {
       );
   }
 
-  onSearchChange = (event) => {
-    const searchField = event.target.value.toLowerCase();
+   const searchField = event.target.value.toLowerCase();
     this.setState(() => {
       return { searchField };
     });
-  };
 
   render() {
     const { monsters, searchField } = this.state;
@@ -39,22 +60,8 @@ class App extends Component {
       return monster.name.toLowerCase().includes(searchField);
     });
 
-    return (
-      <div className="App">
-        <h1 className="app-title">Monsters Rolodex </h1>
-        <SearchBox
-          className="monsters-search-box"
-          SearchBox
-          onChangeHandler={onSearchChange}
-          placeholder="search monsters "
-        />
-
-       <CardList monsters={filteredMonsters} />
-       
-      
-      </div>
-    );
+  
   }
-}
+*/
 
 export default App;
