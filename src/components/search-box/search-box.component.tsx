@@ -1,22 +1,15 @@
-
+import { ChangeEvent, ChangeEventHandler } from 'react';
 import './search-box.styles.css';
 
-// type SearchBoxProps = {
-//   placeholder: string;
-//   onChangeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
-//   className?: string;
-// }
-
-interface ISearchBoxProps  {
+type SearchBoxProps = {
+  className: string;
   placeholder?: string;
-  className?: string;
+  func: ChangeEventHandler;
+  onChangeHandler: (event : ChangeEvent<HTMLInputElement>) => void;
 }
 
-interface ISearchBoxProps  {
-  onChangeHandler: (a : string) => void;
-} 
 
-const SearchBox = ({ placeholder, onChangeHandler, className }: ISearchBoxProps) => {
+const SearchBox = ({ placeholder, onChangeHandler, className }: SearchBoxProps) => {
   return (
     <input
       className={`search-box ${className}`}
